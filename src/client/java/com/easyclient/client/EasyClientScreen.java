@@ -4,7 +4,6 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.TextFieldWidget;
-import net.minecraft.network.packet.c2s.play.ChatCommandC2SPacket;
 import net.minecraft.text.Text;
 
 import java.util.ArrayList;
@@ -120,7 +119,7 @@ public class EasyClientScreen extends Screen {
         String command = raw.startsWith("/") ? raw.substring(1) : raw;
 
         if (this.client != null && this.client.getNetworkHandler() != null) {
-            this.client.getNetworkHandler().sendPacket(new ChatCommandC2SPacket(command));
+            this.client.getNetworkHandler().sendChatCommand(command);
             history.add(0, raw);
             if (history.size() > 20) history.remove(history.size() - 1);
             historyIndex = -1;
