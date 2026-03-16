@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "easyclient",
+  "version": "${version}",
+  "name": "Easy Client",
+  "description": "Press Left Ctrl to open a command sender GUI. Works on all 1.21.x servers.",
+  "authors": ["You"],
+  "contact": {
+    "sources": "https://github.com/you/easyclient"
+  },
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.easyclient.client.EasyClientMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric-api": "*",
+    "minecraft": ">=1.21 <1.22",
+    "java": ">=21"
+  }
+}
